@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const country = { name: "Slovenija", flag: "🇸🇮", features: ["Preko 25.000 kanala", "HD & 4K", "Svi slovenski kanali", "RTV SLO, Pop TV", "24/7 podrška"] };
+---
+<BaseLayout title={`IPTV ${country.name} - EXYU IPTV`} description={`Gledajte TV u ${country.name} s EXYU IPTV - preko 25.000 kanala u HD i 4K.`}>
+  <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white py-20">
+    <div class="container-custom">
+      <div class="flex items-center gap-4 mb-6"><span class="text-6xl">{country.flag}</span><h1 class="text-4xl md:text-5xl font-bold">IPTV {country.name}</h1></div>
+      <p class="text-xl text-slate-300">Gledajte sve balkanske kanale. Premium IPTV usluga s preko 25.000 kanala.</p>
+    </div>
+  </section>
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div><h2 class="text-2xl font-bold mb-6">Zašto EXYU IPTV?</h2><ul class="space-y-4">{country.features.map(f => <li class="flex gap-3 text-slate-600"><svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>{f}</li>)}</ul></div>
+        <div class="card"><h3 class="text-xl font-bold mb-4">Cijene</h3><p class="text-4xl font-bold">od 9.99€/mj</p><a href="/kontakt" class="btn btn-primary mt-6 block text-center">Naruči sada</a></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

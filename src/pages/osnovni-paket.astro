@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pricingPlans = [
+  {
+    name: "Osnovni",
+    price: "9.99",
+    period: "mjesecno",
+    description: "Idealno za početnike",
+    features: [
+      { text: "Preko 10.000 kanala", included: true },
+      { text: "SD kvalitet", included: true },
+      { text: "2 uređaja istovremeno", included: true },
+      { text: "Podrška 24/7", included: true },
+      { text: "EPG voditelj", included: false },
+      { text: "Snimanje (PVR)", included: false },
+    ],
+    popular: false
+  },
+  {
+    name: "Premium",
+    price: "14.99",
+    period: "mjesecno",
+    description: "Najpopularniji izbor",
+    features: [
+      { text: "Preko 25.000 kanala", included: true },
+      { text: "HD & 4K kvalitet", included: true },
+      { text: "3 uređaja istovremeno", included: true },
+      { text: "Podrška 24/7", included: true },
+      { text: "EPG voditelj", included: true },
+      { text: "Snimanje (PVR)", included: false },
+    ],
+    popular: true
+  },
+  {
+    name: "Porodični",
+    price: "19.99",
+    period: "mjesecno",
+    description: "Za cijelu porodicu",
+    features: [
+      { text: "Svi kanali", included: true },
+      { text: "4K HDR kvalitet", included: true },
+      { text: "5 uređaja istovremeno", included: true },
+      { text: "Podrška 24/7", included: true },
+      { text: "EPG voditelj", included: true },
+      { text: "Snimanje (PVR)", included: true },
+    ],
+    popular: false
+  }
+];
+
+const yearlyPlans = [
+  {
+    name: "Osnovni - Godišnji",
+    price: "89.99",
+    savings: "25%",
+    period: "godišnje",
+    features: [
+      "Preko 10.000 kanala",
+      "SD kvalitet",
+      "2 uređaja istovremeno"
+    ]
+  },
+  {
+    name: "Premium - Godišnji",
+    price: "134.99",
+    savings: "25%",
+    period: "godišnje",
+    features: [
+      "Preko 25.000 kanala",
+      "HD & 4K kvalitet",
+      "3 uređaja istovremeno",
+      "EPG voditelj"
+    ]
+  }
+];
+---
+
+<BaseLayout title="Cijene i paketi - EXYU IPTV" description="Pregledajte naše IPTV pakete - osnovni, premium i porodični. Cijene već od 9.99€ mjesečno.">
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+          Cijene i paketi
+        </h1>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          Odaberite paket koji vam najbolje odgovara. Svi paketi uključuju besplatnu probu od 24 sata.
+        </p>
+      </div>
+
+      <!-- Monthly Plans -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+        {pricingPlans.map((plan) => (
+          <div class:list={[
+            "card relative flex flex-col",
+            plan.popular ? "border-2 border-blue-500 ring-4 ring-blue-500/20" : "border border-slate-200"
+          ]}>
+            {plan.popular && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                Najpopularniji
+              </div>
+            )}
+            <div class="text-center mb-6 pt-2">
+              <h3 class="text-xl font-bold text-slate-800 mb-1">{plan.name}</h3>
+              <p class="text-slate-500 text-sm">{plan.description}</p>
+            </div>
+            <div class="flex items-baseline justify-center gap-1 mb-6">
+              <span class="text-5xl font-bold text-slate-800">{plan.price}€</span>
+              <span class="text-slate-500">/ {plan.period}</span>
+            </div>
+            <ul class="space-y-3 mb-8 flex-grow">
+              {plan.features.map((feature) => (
+                <li class:list=[
+                  "flex items-center gap-3",
+                  feature.included ? "text-slate-600" : "text-slate-400"
+                ]}>
+                  {feature.included ? (
+                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  ) : (
+                    <svg class="w-5 h-5 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  )}
+                  {feature.text}
+                </li>
+              ))}
+            </ul>
+            <a href="/kontakt" class:list={[
+              "btn w-full mt-auto",
+              plan.popular ? "btn-primary" : "btn-secondary"
+            ]}>
+              Naruči sada
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <!-- Yearly Plans -->
+      <div class="max-w-4xl mx-auto mb-16">
+        <h2 class="text-2xl font-bold text-slate-800 text-center mb-8">Godišnji paketi - Ušteda do 25%</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {yearlyPlans.map((plan) => (
+            <div class="card border-2 border-green-500 relative">
+              <div class="absolute -top-3 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Ušteda {plan.savings}
+              </div>
+              <div class="text-center">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">{plan.name}</h3>
+                <div class="flex items-baseline justify-center gap-1 mb-4">
+                  <span class="text-4xl font-bold text-slate-800">{plan.price}€</span>
+                  <span class="text-slate-500">/ {plan.period}</span>
+                </div>
+                <ul class="space-y-2 text-left mb-6 text-slate-600">
+                  {plan.features.map((feature) => (
+                    <li class="flex items-center gap-2">
+                      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a href="/kontakt" class="btn btn-primary w-full">
+                  Naruči sada
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-slate-800 text-center mb-8">Česta pitanja o cijenama</h2>
+        <div class="space-y-4">
+          <div class="card">
+            <h3 class="font-semibold text-slate-800 mb-2">Kako mogu platiti?</h3>
+            <p class="text-slate-600">Prihvatamo sve major kreditne kartice (Visa, MasterCard, American Express), PayPal i bankovni transfer.</p>
+          </div>
+          <div class="card">
+            <h3 class="font-semibold text-slate-800 mb-2">Da li mogu otkazati pretplatu?</h3>
+            <p class="text-slate-600">Da, možete otkazati pretplatu u bilo kojem trenutku. Povrat novca je moguć u prvih 30 dana ako niste zadovoljni uslugom.</p>
+          </div>
+          <div class="card">
+            <h3 class="font-semibold text-slate-800 mb-2">Da li nudite besplatnu probu?</h3>
+            <p class="text-slate-600">Da, nudimo besplatnu probu od 24 sata tako da možete testirati našu uslugu prije nego što se pretplatite.</p>
+          </div>
+          <div class="card">
+            <h3 class="font-semibold text-slate-800 mb-2">Šta ako imam problema?</h3>
+            <p class="text-slate-600">Naš tim za podršku je dostupan 24/7 putem telefona, e-maila ili WhatsApp-a. Tu smo da vam pomognemo!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

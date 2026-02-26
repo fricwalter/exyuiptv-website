@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Primary Colors */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #3b82f6;
+
+  /* Secondary Colors */
+  --color-secondary: #1e293b;
+  --color-secondary-dark: #0f172a;
+
+  /* Accent Colors */
+  --color-accent: #dc2626;
+  --color-gold: #f59e0b;
+
+  /* Background */
+  --color-bg-light: #ffffff;
+  --color-bg-dark: #0f172a;
+
+  /* Text */
+  --color-text-light: #1e293b;
+  --color-text-dark: #f1f5f9;
+  --color-text-muted: #64748b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-800 antialiased;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-bold tracking-tight mb-6;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold tracking-tight mb-4;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold mb-3;
+  }
+
+  h4 {
+    @apply text-xl font-semibold mb-2;
+  }
+
+  p {
+    @apply text-lg leading-relaxed mb-4;
+  }
+
+  a {
+    @apply text-primary hover:text-primary-dark transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-slate-700;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
+  }
+
+  .card-dark {
+    @apply bg-slate-800 rounded-2xl shadow-lg p-6 transition-all duration-300;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-slate-700 mb-2;
+  }
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Staggered animations */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }

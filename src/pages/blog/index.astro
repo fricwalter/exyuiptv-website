@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    slug: "kako-odabrati-najbolji-iptv-paket-2025",
+    title: "Kako odabrati najbolji IPTV paket za 2025",
+    excerpt: "Vodič za odabir pravog IPTV paketa prema vašim potrebama i budžetu.",
+    date: "2025-02-26",
+    category: "Vodič",
+    image: "📺"
+  },
+  {
+    slug: "iptv-za-dijasporu",
+    title: "IPTV za dijasporu: Gledajte balkansku televiziju bilo gdje u svijetu",
+    excerpt: "Saznajte kako gledati balkansku televiziju gdje god da se nalazite u svijetu.",
+    date: "2025-02-25",
+    category: "Dijaspora",
+    image: "🌍"
+  },
+  {
+    slug: "smart-tv-vs-android-box",
+    title: "Smart TV naspram Android Box - Šta je bolje za IPTV?",
+    excerpt: "Detaljna usporedba uređaja za gledanje IPTV sadržaja.",
+    date: "2025-02-24",
+    category: "Usporedba",
+    image: "📱"
+  },
+  {
+    slug: "vodic-za-instalaciju-iptv-a",
+    title: "Kompletan vodič za instalaciju IPTV-a na svim uređajima",
+    excerpt: "Jednostavne upute za instalaciju IPTV-a na Smart TV, Android, Fire TV i druge uređaje.",
+    date: "2025-02-23",
+    category: "Upute",
+    image: "⚙️"
+  },
+  {
+    slug: "najbolji-iptv-provajderi-2025",
+    title: "Najbolji IPTV provajderi u 2025 - Naša preporuka",
+    excerpt: "Pregled najboljih IPTV provajdera i naša preporuka za 2025. godinu.",
+    date: "2025-02-22",
+    category: "Preporuke",
+    image: "🏆"
+  },
+  {
+    slug: "sta-je-iptv-i-kako-funkcionise",
+    title: "Šta je IPTV i kako funkcioniše?",
+    excerpt: "Sve što trebate znati o IPTV tehnologiji - od osnova do tehničkih detalja.",
+    date: "2025-02-21",
+    category: "Edukacija",
+    image: "📡"
+  }
+];
+---
+
+<BaseLayout title="Blog - EXYU IPTV" description="Blog o IPTV tehnologiji, vodiči za instalaciju, savjeti za odabir paketa i najnovije vijesti iz svijeta streaminga.">
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+          Blog
+        </h1>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          Saznajte sve o IPTV tehnologiji, vodiči za instalaciju i savjeti za najbolji doživljaj gledanja.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <article class="card group hover:border-blue-500 border-2 border-transparent">
+            <div class="text-5xl mb-4">{post.image}</div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-sm text-blue-600 font-medium">{post.category}</span>
+              <span class="text-sm text-slate-400">•</span>
+              <span class="text-sm text-slate-400">{post.date}</span>
+            </div>
+            <h2 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors">
+              <a href={`/blog/${post.slug}`}>{post.title}</a>
+            </h2>
+            <p class="text-slate-600 mb-4">{post.excerpt}</p>
+            <a href={`/blog/${post.slug}`} class="text-blue-600 font-medium hover:text-blue-700 inline-flex items-center gap-1">
+              Saznaj više
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

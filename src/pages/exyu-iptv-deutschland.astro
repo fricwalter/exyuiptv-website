@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const country = {
+  name: "Njemačka",
+  flag: "🇩🇪",
+  code: "DE"
+};
+
+const features = [
+  "Preko 25.000 kanala",
+  "HD & 4K kvalitet",
+  "Svi balkanski kanali",
+  "Njemački kanali",
+  "Podrška 24/7"
+];
+---
+
+<BaseLayout title={`IPTV ${country.name} - EXYU IPTV`} description={`Gledajte balkansku TV u ${country.name}! EXYU IPTV nudi preko 25.000 kanala u HD i 4K kvalitetu za dijasporu u ${country.name}.`}>
+  <section class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white py-20">
+    <div class="container-custom">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="text-6xl">{country.flag}</span>
+        <h1 class="text-4xl md:text-5xl font-bold">
+          IPTV {country.name}
+        </h1>
+      </div>
+      <p class="text-xl text-slate-300 max-w-2xl">
+        Gledajte sve balkanske kanale iz {country.name}. Premium IPTV usluga s preko 25.000 kanala u HD i 4K kvalitetu.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-800 mb-6">
+            Zašto odabrati EXYU IPTV u {country.name}?
+          </h2>
+          <ul class="space-y-4">
+            {features.map((feature) => (
+              <li class="flex items-center gap-3 text-slate-600">
+                <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-8">
+            <a href="/kontakt" class="btn btn-primary">
+              Naruči sada
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="text-xl font-bold text-slate-800 mb-6">Cijene za {country.name}</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center p-4 bg-slate-50 rounded-lg">
+              <div>
+                <div class="font-semibold text-slate-800">Osnovni</div>
+                <div class="text-sm text-slate-500">10.000+ kanala</div>
+              </div>
+              <div class="text-xl font-bold text-slate-800">9.99€/mj</div>
+            </div>
+            <div class="flex justify-between items-center p-4 bg-blue-50 rounded-lg border-2 border-blue-500">
+              <div>
+                <div class="font-semibold text-slate-800">Premium</div>
+                <div class="text-sm text-slate-500">25.000+ kanala</div>
+              </div>
+              <div class="text-xl font-bold text-slate-800">14.99€/mj</div>
+            </div>
+            <div class="flex justify-between items-center p-4 bg-slate-50 rounded-lg">
+              <div>
+                <div class="font-semibold text-slate-800">Porodični</div>
+                <div class="text-sm text-slate-500">Svi kanali + PVR</div>
+              </div>
+              <div class="text-xl font-bold text-slate-800">19.99€/mj</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-slate-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-slate-800 mb-8">Dostupni kanali za {country.name}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card">
+          <h3 class="font-semibold text-slate-800 mb-4">Balkanski kanali</h3>
+          <ul class="space-y-2 text-slate-600">
+            <li>BHT, FTV, RTS, HRT</li>
+            <li>Pink, Nova, RTL</li>
+            <li>Hayat, OBN, TVSA</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="font-semibold text-slate-800 mb-4">Njemački kanali</h3>
+          <ul class="space-y-2 text-slate-600">
+            <li>ARD, ZDF, RTL</li>
+            <li>ProSieben, Sat.1</li>
+            <li>DAF, DW</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="font-semibold text-slate-800 mb-4">Međunarodni</h3>
+          <ul class="space-y-2 text-slate-600">
+            <li>SKY, HBO</li>
+            <li>Netflix, Disney+</li>
+            <li>Sportski kanali</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
