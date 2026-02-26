@@ -1,197 +1,286 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const pricingPlans = [
-  {
-    name: "Osnovni",
-    price: "9.99",
-    period: "mjesecno",
-    description: "Idealno za početnike",
-    features: [
-      { text: "Preko 10.000 kanala", included: true },
-      { text: "SD kvalitet", included: true },
-      { text: "2 uređaja istovremeno", included: true },
-      { text: "Podrška 24/7", included: true },
-      { text: "EPG voditelj", included: false },
-      { text: "Snimanje (PVR)", included: false },
-    ],
-    popular: false
-  },
+const plans = [
   {
     name: "Premium",
-    price: "14.99",
-    period: "mjesecno",
-    description: "Najpopularniji izbor",
+    price: 15,
+    period: "mjesec",
     features: [
-      { text: "Preko 25.000 kanala", included: true },
-      { text: "HD & 4K kvalitet", included: true },
-      { text: "3 uređaja istovremeno", included: true },
-      { text: "Podrška 24/7", included: true },
-      { text: "EPG voditelj", included: true },
-      { text: "Snimanje (PVR)", included: false },
+      "10.000+ kanala u 4K",
+      "EXYU + Međunarodni",
+      "Sport, filmovi, serije",
+      "Samo 30 Mbps internet",
+      "Podrška 24/7"
     ],
-    popular: true
+    popular: true,
+    badge: "🔥 NAJPOPULARNIJI"
   },
   {
-    name: "Porodični",
-    price: "19.99",
-    period: "mjesecno",
-    description: "Za cijelu porodicu",
+    name: "Standard",
+    price: 12,
+    period: "mjesec",
     features: [
-      { text: "Svi kanali", included: true },
-      { text: "4K HDR kvalitet", included: true },
-      { text: "5 uređaja istovremeno", included: true },
-      { text: "Podrška 24/7", included: true },
-      { text: "EPG voditelj", included: true },
-      { text: "Snimanje (PVR)", included: true },
+      "5.000+ kanala",
+      "EXYU kanali",
+      "HD kvalitet",
+      "Pouzdan server",
+      "Podrška 24/7"
     ],
-    popular: false
+    popular: false,
+    badge: null
   }
 ];
 
-const yearlyPlans = [
-  {
-    name: "Osnovni - Godišnji",
-    price: "89.99",
-    savings: "25%",
-    period: "godišnje",
-    features: [
-      "Preko 10.000 kanala",
-      "SD kvalitet",
-      "2 uređaja istovremeno"
-    ]
-  },
-  {
-    name: "Premium - Godišnji",
-    price: "134.99",
-    savings: "25%",
-    period: "godišnje",
-    features: [
-      "Preko 25.000 kanala",
-      "HD & 4K kvalitet",
-      "3 uređaja istovremeno",
-      "EPG voditelj"
-    ]
-  }
+const periods = [
+  { months: 1, price: 15, label: "1 mjesec", savings: null },
+  { months: 3, price: 40, label: "3 mjeseca", savings: "-11%" },
+  { months: 6, price: 60, label: "6 mjeseci", savings: "-33%" },
+  { months: 12, price: 84, label: "12 mjeseci", savings: "-53%", best: true }
+];
+
+const features = [
+  { icon: "🚀", title: "Trenutna aktivacija", desc: "Kanal odmah nakon uplate" },
+  { icon: "🖥️", title: "Svi uređaji", desc: "Smart TV, Android, Fire TV, PC, telefon" },
+  { icon: "💬", title: "WhatsApp podrška", desc: "Kontaktirajte nas direktno" },
+  { icon: "🛡️", title: "7 dana garancije", desc: "Vraćamo novac ako niste zadovoljni" },
+  { icon: "🌍", title: "Dijaspora", desc: "Gledajte domaće kanale bilo gdje u svijetu" },
+  { icon: "⚡", title: "99.9% Uptime", desc: "Stabilna konekcija bez prekida" }
+];
+
+const testimonials = [
+  { name: "Mike iz Njemačke", text: "Konačno gledam HRT i Pink bez problema! Preporučujem svima.", stars: "⭐⭐⭐⭐⭐" },
+  { name: "Senad iz Švicarske", text: "Najbolji IPTV service koji sam probao. Brza podrška!", stars: "⭐⭐⭐⭐⭐" },
+  { name: "Alen iz Austrije", text: "Odlična slika, super cijene. Hvala vam!", stars: "⭐⭐⭐⭐⭐" }
+];
+
+const faqs = [
+  { q: "Kako da naručim?", a: "Kontaktirajte nas putem WhatsApp-a ili e-maila. Plaćate sigurno putem Stripe-a." },
+  { q: "Koliko uređaja mogu koristiti?", a: "Ovisno o paketu, možete koristiti 1-2 uređaja istovremeno." },
+  { q: "Šta ako ne radi?", a: "Kontaktirajte nas odmah! Naš tim je dostupan 24/7 za rješavanje problema." },
+  { q: "Koja je brzina interneta potrebna?", a: "Minimalno 30 Mbps za HD, 50 Mbps za 4K kvalitet." }
 ];
 ---
 
-<BaseLayout title="Cijene i paketi - EXYU IPTV" description="Pregledajte naše IPTV pakete - osnovni, premium i porodični. Cijene već od 9.99€ mjesečno.">
-  <section class="section bg-white">
-    <div class="container-custom">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-          Cijene i paketi
-        </h1>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-          Odaberite paket koji vam najbolje odgovara. Svi paketi uključuju besplatnu probu od 24 sata.
-        </p>
-      </div>
+<BaseLayout title="Cijene - EXYU IPTV Najbolji za dijasporu" description="EXYU IPTV - 10.000+ kanala u 4K. Gledajte domaće programe bilo gdje u svijetu. Besplatna proba 24h!">
 
-      <!-- Monthly Plans -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-        {pricingPlans.map((plan) => (
-          <div class:list={[
-            "card relative flex flex-col",
-            plan.popular ? "border-2 border-blue-500 ring-4 ring-blue-500/20" : "border border-slate-200"
-          ]}>
-            {plan.popular && (
-              <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                Najpopularniji
-              </div>
-            )}
-            <div class="text-center mb-6 pt-2">
-              <h3 class="text-xl font-bold text-slate-800 mb-1">{plan.name}</h3>
-              <p class="text-slate-500 text-sm">{plan.description}</p>
-            </div>
-            <div class="flex items-baseline justify-center gap-1 mb-6">
-              <span class="text-5xl font-bold text-slate-800">{plan.price}€</span>
-              <span class="text-slate-500">/ {plan.period}</span>
-            </div>
-            <ul class="space-y-3 mb-8 flex-grow">
-              {plan.features.map((feature) => (
-                <li class:list=[
-                  "flex items-center gap-3",
-                  feature.included ? "text-slate-600" : "text-slate-400"
-                ]}>
-                  {feature.included ? (
-                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  ) : (
-                    <svg class="w-5 h-5 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  )}
-                  {feature.text}
-                </li>
-              ))}
-            </ul>
-            <a href="/kontakt" class:list={[
-              "btn w-full mt-auto",
-              plan.popular ? "btn-primary" : "btn-secondary"
-            ]}>
-              Naruči sada
-            </a>
+  <!-- Hero Section - Warm & Einladend -->
+  <section class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900/30 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent"></div>
+
+    <div class="container-custom relative py-20 md:py-28">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 text-amber-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <span>🎁</span> Besplatna proba 24h za sve nove korisnike
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          Najbolja IPTV <span class="text-amber-400">za dijasporu</span>
+        </h1>
+
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          Gledajte preko 10.000 kanala u 4K kvalitetu. HRT, Pink, Nova, B92, Hayat i svi vaši omiljeni programi na jednom mjestu.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#naruci" class="bg-amber-500 hover:bg-amber-400 text-slate-900 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-amber-500/25">
+            Naruči sada
+          </a>
+          <a href="#cijene" class="bg-slate-700/50 hover:bg-slate-600/50 text-white px-8 py-4 rounded-2xl font-semibold transition-all border border-slate-600">
+            Pogledaj cijene
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="mt-12 flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🇩🇪</span> Serveri u Njemačkoj
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">⚡</span> Trenutna aktivacija
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🛡️</span> 7 dana garancija
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave Divider -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#0f172a"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Features Section - Warm -->
+  <section class="bg-slate-900 py-16">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {features.map((f) => (
+          <div class="bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 p-4 rounded-2xl text-center transition-all hover:border-amber-500/30 group">
+            <div class="text-3xl mb-2">{f.icon}</div>
+            <h3 class="font-semibold text-white text-sm mb-1">{f.title}</h3>
+            <p class="text-slate-400 text-xs">{f.desc}</p>
           </div>
         ))}
       </div>
+    </div>
+  </section>
 
-      <!-- Yearly Plans -->
-      <div class="max-w-4xl mx-auto mb-16">
-        <h2 class="text-2xl font-bold text-slate-800 text-center mb-8">Godišnji paketi - Ušteda do 25%</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {yearlyPlans.map((plan) => (
-            <div class="card border-2 border-green-500 relative">
-              <div class="absolute -top-3 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                Ušteda {plan.savings}
-              </div>
-              <div class="text-center">
-                <h3 class="text-lg font-bold text-slate-800 mb-2">{plan.name}</h3>
-                <div class="flex items-baseline justify-center gap-1 mb-4">
-                  <span class="text-4xl font-bold text-slate-800">{plan.price}€</span>
-                  <span class="text-slate-500">/ {plan.period}</span>
+  <!-- Pricing Section - Hauptteil -->
+  <section id="cijene" class="bg-slate-900 py-20">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Jednostavne <span class="text-amber-400">cijene</span>
+        </h2>
+        <p class="text-slate-400 max-w-xl mx-auto">
+          Izaberite period koji vam najviše odgovara. Plaćate samo ono što koristite.
+        </p>
+      </div>
+
+      <!-- Period Auswahl -->
+      <div class="max-w-4xl mx-auto mb-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {periods.map((p) => (
+            <button class:list={[
+              "p-6 rounded-2xl text-center transition-all border-2",
+              p.best
+                ? "bg-amber-500 border-amber-400 text-slate-900"
+                : "bg-slate-800 border-slate-700 text-white hover:border-amber-500/50"
+            ]}>
+              {p.savings && (
+                <div class:list={["text-xs font-bold mb-1", p.best ? "text-slate-800" : "text-amber-400"]}>
+                  {p.savings}
                 </div>
-                <ul class="space-y-2 text-left mb-6 text-slate-600">
-                  {plan.features.map((feature) => (
-                    <li class="flex items-center gap-2">
-                      <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <a href="/kontakt" class="btn btn-primary w-full">
-                  Naruči sada
-                </a>
+              )}
+              <div class:list={["text-2xl font-bold mb-1", p.best ? "text-slate-900" : "text-white"]}>
+                {p.price}€
               </div>
-            </div>
+              <div class:list={["text-sm", p.best ? "text-slate-700" : "text-slate-400"]}>
+                {p.label}
+              </div>
+            </button>
           ))}
         </div>
       </div>
 
-      <!-- FAQ -->
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl font-bold text-slate-800 text-center mb-8">Česta pitanja o cijenama</h2>
-        <div class="space-y-4">
-          <div class="card">
-            <h3 class="font-semibold text-slate-800 mb-2">Kako mogu platiti?</h3>
-            <p class="text-slate-600">Prihvatamo sve major kreditne kartice (Visa, MasterCard, American Express), PayPal i bankovni transfer.</p>
+      <!-- Hauptpaket Card -->
+      <div id="naruci" class="max-w-2xl mx-auto">
+        <div class="bg-gradient-to-br from-slate-800 to-slate-800/50 border border-slate-600/50 rounded-3xl p-8 md:p-10 shadow-2xl">
+          <div class="text-center mb-8">
+            <span class="inline-block bg-amber-500/20 text-amber-300 px-4 py-1 rounded-full text-sm font-medium mb-4">
+              🔥 Preporučujemo
+            </span>
+            <h3 class="text-3xl font-bold text-white mb-2">Premium paket</h3>
+            <p class="text-slate-400">Sve što vam treba za najbolji doživljaj</p>
           </div>
-          <div class="card">
-            <h3 class="font-semibold text-slate-800 mb-2">Da li mogu otkazati pretplatu?</h3>
-            <p class="text-slate-600">Da, možete otkazati pretplatu u bilo kojem trenutku. Povrat novca je moguć u prvih 30 dana ako niste zadovoljni uslugom.</p>
+
+          <!-- Preis -->
+          <div class="text-center mb-8">
+            <div class="flex items-baseline justify-center gap-2">
+              <span class="text-6xl font-bold text-white">84€</span>
+              <span class="text-xl text-slate-400">/ godina</span>
+            </div>
+            <p class="text-amber-400 text-sm mt-2">Ušteda 53% - najbolja ponuda</p>
           </div>
-          <div class="card">
-            <h3 class="font-semibold text-slate-800 mb-2">Da li nudite besplatnu probu?</h3>
-            <p class="text-slate-600">Da, nudimo besplatnu probu od 24 sata tako da možete testirati našu uslugu prije nego što se pretplatite.</p>
+
+          <!-- Features -->
+          <ul class="space-y-4 mb-8">
+            {plans[0].features.map((f) => (
+              <li class="flex items-center gap-3 text-slate-300">
+                <div class="w-8 h-8 bg-amber-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <!-- CTA -->
+          <a href="https://wa.me/4915251741280" target="_blank" class="block w-full bg-amber-500 hover:bg-amber-400 text-slate-900 py-4 rounded-2xl font-bold text-lg text-center transition-all shadow-lg hover:shadow-amber-500/25">
+            📱 Naruči preko WhatsApp-a
+          </a>
+
+          <p class="text-center text-slate-500 text-sm mt-4">
+            Ili pišite na info@exyukanali.tv
+          </p>
+        </div>
+      </div>
+
+      <!-- Zahlung Info -->
+      <div class="max-w-2xl mx-auto mt-12">
+        <div class="flex flex-wrap justify-center items-center gap-6 text-slate-400">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">💳</span> Visa, Mastercard
           </div>
-          <div class="card">
-            <h3 class="font-semibold text-slate-800 mb-2">Šta ako imam problema?</h3>
-            <p class="text-slate-600">Naš tim za podršku je dostupan 24/7 putem telefona, e-maila ili WhatsApp-a. Tu smo da vam pomognemo!</p>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🔒</span> Sigurno plaćanje
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">💰</span> Stripe
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-slate-800 py-16">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-white text-center mb-10">
+        Šta naši korisnici kažu <span class="text-amber-400">⭐</span>
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {testimonials.map((t) => (
+          <div class="bg-slate-700/30 border border-slate-600/30 p-6 rounded-2xl">
+            <div class="text-amber-400 mb-3">{t.stars}</div>
+            <p class="text-slate-300 mb-4 italic">"{t.text}"</p>
+            <p class="text-slate-400 text-sm font-medium">— {t.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-slate-900 py-16">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-white text-center mb-10">
+        Česta pitanja
+      </h2>
+      <div class="max-w-2xl mx-auto space-y-4">
+        {faqs.map((faq) => (
+          <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6">
+            <h3 class="font-semibold text-white mb-2">❓ {faq.q}</h3>
+            <p class="text-slate-400">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Footer -->
+  <section class="bg-gradient-to-r from-amber-600 to-orange-600 py-16">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">
+        Još uvijek imate pitanja?
+      </h2>
+      <p class="text-white/80 mb-8 max-w-xl mx-auto">
+        Naš tim je dostupan 24/7. Kontaktirajte nas direktno!
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/4915251741280" class="bg-white text-amber-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-100 transition-all shadow-lg">
+          📱 WhatsApp
+        </a>
+        <a href="mailto:info@exyukanali.tv" class="bg-white/20 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white/30 transition-all border border-white/30">
+          📧 E-mail
+        </a>
       </div>
     </div>
   </section>
