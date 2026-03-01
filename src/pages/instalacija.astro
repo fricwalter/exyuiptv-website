@@ -2,159 +2,728 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Instalacija - EXYU IPTV" description="Jednostavan vodič za instalaciju IPTV-a na svim uređajima - Smart TV, Android box, Fire TV, mobitel i računar.">
-  <section class="section bg-white">
-    <div class="container-custom">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-          Vodič za instalaciju
-        </h1>
-        <p class="text-xl text-slate-600 mb-12">
-          Jednostavne upute za instalaciju IPTV-a na vašem uređaju
-        </p>
+<BaseLayout
+  title="Instalacija EXYU IPTV | Vodič za sve uređaje"
+  description="Detaljan vodič za instalaciju EXYU IPTV-a na Android Box, Fire TV Stick, Smart TV, iPhone, PC i MAG. Jednostavno, brzo, korak po korak."
+>
 
-        <!-- Devices -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          <div class="bg-blue-50 rounded-xl p-6 text-center">
-            <div class="text-4xl mb-3">📺</div>
-            <h3 class="font-semibold text-slate-800">Smart TV</h3>
-          </div>
-          <div class="bg-slate-50 rounded-xl p-6 text-center">
-            <div class="text-4xl mb-3">📱</div>
-            <h3 class="font-semibold text-slate-800">Android</h3>
-          </div>
-          <div class="bg-slate-50 rounded-xl p-6 text-center">
-            <div class="text-4xl mb-3">🔥</div>
-            <h3 class="font-semibold text-slate-800">Fire TV</h3>
-          </div>
-          <div class="bg-slate-50 rounded-xl p-6 text-center">
-            <div class="text-4xl mb-3">💻</div>
-            <h3 class="font-semibold text-slate-800">PC / Mac</h3>
-          </div>
-        </div>
-
-        <!-- Android Box / Firestick -->
-        <div class="card mb-8">
-          <h2 class="text-2xl font-bold text-slate-800 mb-6">Instalacija na Android box / Fire TV Stick</h2>
-          <ol class="space-y-4">
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Preuzmite aplikaciju</h4>
-                <p class="text-slate-600">Preuzmite IPTV aplikaciju (npr. IPTV Smarters, GSE Smart IPTV ili Smart STB) iz Google Play Storea ili Amazon Appstorea.</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">2</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Unesite podatke za prijavu</h4>
-                <p class="text-slate-600">Nakon instalacije, pokrenite aplikaciju i unesite podatke koje ste dobili nakon narudžbe (URL i kod).</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">3</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Uživajte u gledanju</h4>
-                <p class="text-slate-600">Nakon uspješne prijave, moći ćete pristupiti svim kanalima i sadržaju.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Smart TV -->
-        <div class="card mb-8">
-          <h2 class="text-2xl font-bold text-slate-800 mb-6">Instalacija na Smart TV (Samsung/LG)</h2>
-          <ol class="space-y-4">
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Otvorite Smart Hub / LG Content Store</h4>
-                <p class="text-slate-600">Na vašem Smart TV-u pristupite trgovini aplikacijama.</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">2</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Pretražite i instalirajte IPTV aplikaciju</h4>
-                <p class="text-slate-600">Pretražite "IPTV" ili "Smart IPTV" i instalirajte odgovarajuću aplikaciju za vaš TV.</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">3</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Unesite podatke</h4>
-                <p class="text-slate-600">Pokrenite aplikaciju i unesite MAC adresu uređaja i podatke za prijavu koje ste dobili od nas.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Mobile -->
-        <div class="card mb-8">
-          <h2 class="text-2xl font-bold text-slate-800 mb-6">Instalacija na mobilni telefon / tablet</h2>
-          <ol class="space-y-4">
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Preuzmite aplikaciju</h4>
-                <p class="text-slate-600">Preuzmite IPTV aplikaciju iz App Storea (iOS) ili Google Play Storea (Android).</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">2</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Kreirajte listu kanala</h4>
-                <p class="text-slate-600">U aplikaciji dodajte novu listu kanala koristeći našu Xtream Codes ili M3U linku.</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">3</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Gledajte uživo</h4>
-                <p class="text-slate-600">Odaberite kanal i uživajte u gledanju na vašem mobilnom uređaju bilo gdje.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- PC -->
-        <div class="card">
-          <h2 class="text-2xl font-bold text-slate-800 mb-6">Instalacija na računar (PC / Mac)</h2>
-          <ol class="space-y-4">
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Preuzmite VLC Player</h4>
-                <p class="text-slate-600">Besplatni VLC media player možete preuzeti sa videoLAN.org.</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">2</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Otvorite M3U listu</h4>
-                <p class="text-slate-600">U VLC playeru idite na Media > Open Network Stream i zalijepite našu M3U linku.</p>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">3</span>
-              <div>
-                <h4 class="font-semibold text-slate-800">Uživajte</h4>
-                <p class="text-slate-600">Kliknite Play i gledajte svoje omiljene kanale na računaru.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <div class="mt-12 bg-blue-50 rounded-2xl p-8 text-center">
-          <h3 class="text-xl font-bold text-slate-800 mb-4">Trebate pomoć?</h3>
-          <p class="text-slate-600 mb-6">
-            Naš tim je dostupan 24/7 za tehničku pomoć pri instalaciji.
-          </p>
-          <a href="/narudzba" class="btn btn-primary">
-            Kontaktirajte podršku
-          </a>
-        </div>
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden" style="background: linear-gradient(135deg, #1e3a5f 0%, #1c1917 60%);">
+    <div class="absolute inset-0 opacity-10"
+      style="background-image: radial-gradient(circle at 20% 50%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #7c3aed 0%, transparent 50%);">
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-500/40 text-blue-300 rounded-full text-sm font-semibold mb-6">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Podrška 24/7 za instalaciju
       </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+        Vodič za <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Instalaciju</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
+        Korak po korak uputstvo za sve uređaje. Instalacija traje manje od 5 minuta.
+      </p>
+      <p class="text-sm text-gray-500">Odaberite vaš uređaj ispod i pratite upute.</p>
     </div>
   </section>
+
+  <!-- Device Selector -->
+  <section class="py-16 bg-stone-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Device Tabs -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 mb-12" id="device-tabs">
+
+        <!-- Android Box -->
+        <button
+          data-tab="android"
+          class="tab-btn active-tab flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-blue-500 bg-blue-500/10 text-blue-400 transition-all duration-200 hover:scale-105"
+        >
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.523 15.341a.5.5 0 01-.5-.5V8.16a.5.5 0 011 0v6.681a.5.5 0 01-.5.5zm-11.046 0a.5.5 0 01-.5-.5V8.16a.5.5 0 011 0v6.681a.5.5 0 01-.5.5zM7.5 5.978L6.105 3.63a.25.25 0 01.434-.25L8 5.8a7.379 7.379 0 018 0l1.461-2.42a.25.25 0 01.434.25L16.5 5.978A7.483 7.483 0 0120 12.5v.5H4v-.5a7.483 7.483 0 013.5-6.522zM9.75 10a.75.75 0 100-1.5.75.75 0 000 1.5zm4.5 0a.75.75 0 100-1.5.75.75 0 000 1.5zM4 14h16v1.5A2.5 2.5 0 0117.5 18h-11A2.5 2.5 0 014 15.5V14z"/>
+          </svg>
+          <span class="text-xs font-semibold text-center leading-tight">Android<br/>Box / TV</span>
+        </button>
+
+        <!-- Fire TV -->
+        <button
+          data-tab="firetv"
+          class="tab-btn flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-stone-700 bg-stone-800 text-gray-400 transition-all duration-200 hover:scale-105 hover:border-orange-500 hover:text-orange-400"
+        >
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+          </svg>
+          <span class="text-xs font-semibold text-center leading-tight">Amazon<br/>Fire TV</span>
+        </button>
+
+        <!-- Smart TV -->
+        <button
+          data-tab="smarttv"
+          class="tab-btn flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-stone-700 bg-stone-800 text-gray-400 transition-all duration-200 hover:scale-105 hover:border-blue-500 hover:text-blue-400"
+        >
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span class="text-xs font-semibold text-center leading-tight">Smart TV<br/>Samsung/LG</span>
+        </button>
+
+        <!-- Apple / iOS -->
+        <button
+          data-tab="apple"
+          class="tab-btn flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-stone-700 bg-stone-800 text-gray-400 transition-all duration-200 hover:scale-105 hover:border-gray-300 hover:text-gray-200"
+        >
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          <span class="text-xs font-semibold text-center leading-tight">Apple TV<br/>/ iPhone</span>
+        </button>
+
+        <!-- PC / Mac -->
+        <button
+          data-tab="pc"
+          class="tab-btn flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-stone-700 bg-stone-800 text-gray-400 transition-all duration-200 hover:scale-105 hover:border-purple-500 hover:text-purple-400"
+        >
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span class="text-xs font-semibold text-center leading-tight">PC / Mac<br/>Windows</span>
+        </button>
+
+        <!-- MAG -->
+        <button
+          data-tab="mag"
+          class="tab-btn flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-stone-700 bg-stone-800 text-gray-400 transition-all duration-200 hover:scale-105 hover:border-green-500 hover:text-green-400"
+        >
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+          </svg>
+          <span class="text-xs font-semibold text-center leading-tight">MAG Box<br/>/ STB</span>
+        </button>
+
+        <!-- Enigma2 -->
+        <button
+          data-tab="enigma"
+          class="tab-btn flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-stone-700 bg-stone-800 text-gray-400 transition-all duration-200 hover:scale-105 hover:border-yellow-500 hover:text-yellow-400"
+        >
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+          </svg>
+          <span class="text-xs font-semibold text-center leading-tight">Enigma2<br/>Dreambox</span>
+        </button>
+
+      </div>
+
+      <!-- Tab Content -->
+      <div id="tab-content" class="max-w-4xl mx-auto">
+
+        <!-- ===== ANDROID BOX / TV ===== -->
+        <div id="content-android" class="tab-panel">
+          <div class="bg-stone-800 border border-stone-700 rounded-3xl overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-600/20 to-green-600/20 border-b border-stone-700 px-8 py-6 flex items-center gap-4">
+              <div class="w-14 h-14 bg-blue-600/30 border border-blue-500/40 rounded-2xl flex items-center justify-center">
+                <svg class="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.523 15.341a.5.5 0 01-.5-.5V8.16a.5.5 0 011 0v6.681a.5.5 0 01-.5.5zm-11.046 0a.5.5 0 01-.5-.5V8.16a.5.5 0 011 0v6.681a.5.5 0 01-.5.5zM7.5 5.978L6.105 3.63a.25.25 0 01.434-.25L8 5.8a7.379 7.379 0 018 0l1.461-2.42a.25.25 0 01.434.25L16.5 5.978A7.483 7.483 0 0120 12.5v.5H4v-.5a7.483 7.483 0 013.5-6.522zM9.75 10a.75.75 0 100-1.5.75.75 0 000 1.5zm4.5 0a.75.75 0 100-1.5.75.75 0 000 1.5zM4 14h16v1.5A2.5 2.5 0 0117.5 18h-11A2.5 2.5 0 014 15.5V14z"/>
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">Android Box / Android TV</h2>
+                <p class="text-gray-400 text-sm mt-1">Radi na svim Android uređajima — TV Box, NVIDIA Shield, Mecool, Ugoos i dr.</p>
+              </div>
+            </div>
+            <div class="p-8">
+              <!-- Recommended app badge -->
+              <div class="flex flex-wrap gap-3 mb-8">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-green-500/15 border border-green-500/30 text-green-400 rounded-full text-sm font-semibold">
+                  ✅ Preporučena aplikacija: IPTV Smarters Pro
+                </span>
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/15 border border-blue-500/30 text-blue-400 rounded-full text-sm font-semibold">
+                  📱 Alternativa: GSE Smart IPTV
+                </span>
+              </div>
+
+              <ol class="space-y-6">
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg shadow-blue-600/25">1</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Otvorite Google Play Store</h4>
+                    <p class="text-gray-400">Na vašem Android uređaju pokrenite Google Play Store. Ukoliko nemate Play Store (npr. stariji China box), pređite na metodu sa Downloaderom (vidi tip ispod).</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg shadow-blue-600/25">2</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Instalirajte IPTV Smarters Pro</h4>
+                    <p class="text-gray-400">Potražite <strong class="text-white">„IPTV Smarters Pro"</strong> u pretrazi i instalirajte aplikaciju (besplatna za preuzimanje).</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg shadow-blue-600/25">3</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Otvorite aplikaciju i odaberite metodu prijave</h4>
+                    <p class="text-gray-400">Pokrenite IPTV Smarters Pro. Na početnom ekranu odaberite <strong class="text-white">„Login with Xtream Codes API"</strong>.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg shadow-blue-600/25">4</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Unesite pristupne podatke</h4>
+                    <p class="text-gray-400 mb-3">Unesite podatke koje ste dobili od nas putem WhatsAppa:</p>
+                    <div class="bg-stone-900 border border-stone-700 rounded-xl p-4 space-y-2 text-sm font-mono">
+                      <div class="flex justify-between"><span class="text-gray-500">Any Name:</span><span class="text-green-400">EXYU IPTV</span></div>
+                      <div class="flex justify-between"><span class="text-gray-500">Server URL:</span><span class="text-blue-400">http://vaš-server.com</span></div>
+                      <div class="flex justify-between"><span class="text-gray-500">Username:</span><span class="text-blue-400">vaše korisničko ime</span></div>
+                      <div class="flex justify-between"><span class="text-gray-500">Password:</span><span class="text-blue-400">vaša lozinka</span></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-600 to-green-700 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg shadow-green-600/25">✓</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Gotovo — uživajte u gledanju!</h4>
+                    <p class="text-gray-400">Pritisnite „Add User" i aplikacija će automatski učitati sve kanale, serije i filmove. Instalacija završena.</p>
+                  </div>
+                </li>
+              </ol>
+
+              <!-- Tip: Downloader method -->
+              <div class="mt-8 bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6">
+                <div class="flex items-start gap-3">
+                  <span class="text-2xl">💡</span>
+                  <div>
+                    <h4 class="font-bold text-yellow-400 mb-2">Bez Google Play Store? Koristite Downloader</h4>
+                    <ol class="text-gray-300 text-sm space-y-2 list-decimal list-inside">
+                      <li>Idite na <strong>Postavke → Sigurnost → Nepoznati izvori</strong> i omogućite instalaciju iz nepoznatih izvora</li>
+                      <li>Preuzmite aplikaciju <strong>„Downloader"</strong> (dostupna na APKPure ili direktan link od nas)</li>
+                      <li>Otvorite Downloader i unesite URL koji ste dobili od nas za preuzimanje APK datoteke</li>
+                      <li>Instalirajte preuzetu APK i prijavite se s vašim podacima</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== FIRE TV STICK ===== -->
+        <div id="content-firetv" class="tab-panel hidden">
+          <div class="bg-stone-800 border border-stone-700 rounded-3xl overflow-hidden">
+            <div class="bg-gradient-to-r from-orange-600/20 to-red-600/20 border-b border-stone-700 px-8 py-6 flex items-center gap-4">
+              <div class="w-14 h-14 bg-orange-600/30 border border-orange-500/40 rounded-2xl flex items-center justify-center text-3xl">🔥</div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">Amazon Fire TV Stick</h2>
+                <p class="text-gray-400 text-sm mt-1">Fire TV Stick Lite, 4K, 4K Max — svi modeli. Koristimo Downloader metodu.</p>
+              </div>
+            </div>
+            <div class="p-8">
+              <div class="flex flex-wrap gap-3 mb-8">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/15 border border-orange-500/30 text-orange-400 rounded-full text-sm font-semibold">
+                  🔥 Metoda: Downloader + Sideload APK
+                </span>
+              </div>
+
+              <ol class="space-y-6">
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Omogućite instalaciju iz nepoznatih izvora</h4>
+                    <p class="text-gray-400">Idite na <strong class="text-white">Postavke → Moj Fire TV → Opcije za programere</strong> i uključite <strong class="text-white">„Apps from Unknown Sources"</strong>. Potvrdite sa „Turn On".</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">2</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Instalirajte Downloader aplikaciju</h4>
+                    <p class="text-gray-400">Pritisnite tipku za pretragu na daljinskom, potražite <strong class="text-white">„Downloader"</strong> (narančasta ikona) u Amazon App Store-u i instalirajte je besplatno.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">3</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Preuzmite IPTV Smarters Pro putem Downlodera</h4>
+                    <p class="text-gray-400 mb-3">Otvorite Downloader i u URL polje unesite jednu od adresa:</p>
+                    <div class="bg-stone-900 border border-stone-700 rounded-xl p-4 space-y-2 text-sm font-mono">
+                      <div class="text-blue-400">https://iptvsmarters.com</div>
+                      <div class="text-gray-500 text-xs">ili direktan APK link koji ste dobili od nas</div>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2">Pričekajte preuzimanje i pritisnite „Install" kada se pojavi pitanje.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">4</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Otvorite IPTV Smarters i prijavite se</h4>
+                    <p class="text-gray-400">Pokrenite aplikaciju → <strong class="text-white">Login with Xtream Codes API</strong> → Unesite Server URL, Username i Password koje ste dobili od nas.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-600 to-green-700 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">✓</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Gotovo — kanali su učitani!</h4>
+                    <p class="text-gray-400">Pritisnite „Add User" i uživajte u svim kanalima. Preporučujemo dodati aplikaciju na Home Screen za brz pristup.</p>
+                  </div>
+                </li>
+              </ol>
+
+              <div class="mt-8 bg-blue-500/10 border border-blue-500/30 rounded-2xl p-6">
+                <div class="flex items-start gap-3">
+                  <span class="text-2xl">🎬</span>
+                  <div>
+                    <h4 class="font-bold text-blue-400 mb-1">Preporučena alternativa: TiviMate</h4>
+                    <p class="text-gray-300 text-sm">TiviMate Companion je jedna od najboljh IPTV aplikacija za Fire TV. Dostupna na Amazon App Store-u. Podržava EPG, snimanje i multi-stream.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== SMART TV ===== -->
+        <div id="content-smarttv" class="tab-panel hidden">
+          <div class="bg-stone-800 border border-stone-700 rounded-3xl overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 border-b border-stone-700 px-8 py-6 flex items-center gap-4">
+              <div class="w-14 h-14 bg-blue-600/30 border border-blue-500/40 rounded-2xl flex items-center justify-center">
+                <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">Smart TV — Samsung & LG</h2>
+                <p class="text-gray-400 text-sm mt-1">Samsung (Tizen OS) i LG (webOS) imaju različite metode instalacije.</p>
+              </div>
+            </div>
+            <div class="p-8 space-y-10">
+
+              <!-- Samsung -->
+              <div>
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">S</div>
+                  <h3 class="text-xl font-bold text-white">Samsung Smart TV (Tizen)</h3>
+                </div>
+                <ol class="space-y-5">
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold">1</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Otvorite Smart Hub</h4>
+                      <p class="text-gray-400 text-sm">Pritisnite Home tipku na daljinskom → odaberite <strong class="text-white">Apps</strong> (ikona četiri kvadrata).</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold">2</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Potražite Smart IPTV ili SSIPTV</h4>
+                      <p class="text-gray-400 text-sm">U pretrazi upišite <strong class="text-white">„Smart IPTV"</strong> ili <strong class="text-white">„SSIPTV"</strong> i instalirajte aplikaciju.</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold">3</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Zapišite MAC adresu</h4>
+                      <p class="text-gray-400 text-sm">Pokrenite aplikaciju i pronađite <strong class="text-white">MAC adresu</strong> prikazanu na ekranu. Pošaljite nam je putem WhatsAppa.</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-green-600 text-white rounded-lg flex items-center justify-center font-bold">✓</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Aktivacija i učitavanje kanala</h4>
+                      <p class="text-gray-400 text-sm">Mi aktiviramo vaš pristup na osnovu MAC adrese. Restartujte aplikaciju i kanali će se automatski učitati.</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="border-t border-stone-700"></div>
+
+              <!-- LG -->
+              <div>
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">L</div>
+                  <h3 class="text-xl font-bold text-white">LG Smart TV (webOS)</h3>
+                </div>
+                <ol class="space-y-5">
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold">1</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Otvorite LG Content Store</h4>
+                      <p class="text-gray-400 text-sm">Pritisnite Home → <strong class="text-white">LG Content Store</strong> → Apps kategorija.</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold">2</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Instalirajte Smart IPTV ili IPTV Smarters</h4>
+                      <p class="text-gray-400 text-sm">Potražite <strong class="text-white">„Smart IPTV"</strong> ili <strong class="text-white">„IPTV Smarters"</strong>. Instalacija je besplatna.</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold">3</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Dodajte playlist ili Xtream Codes</h4>
+                      <p class="text-gray-400 text-sm">U aplikaciji odaberite <strong class="text-white">Xtream Codes</strong> login i unesite vaš Server URL, korisničko ime i lozinku. Alternativno koristite M3U URL.</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== APPLE / IOS ===== -->
+        <div id="content-apple" class="tab-panel hidden">
+          <div class="bg-stone-800 border border-stone-700 rounded-3xl overflow-hidden">
+            <div class="bg-gradient-to-r from-gray-600/20 to-slate-600/20 border-b border-stone-700 px-8 py-6 flex items-center gap-4">
+              <div class="w-14 h-14 bg-gray-600/30 border border-gray-500/40 rounded-2xl flex items-center justify-center text-3xl">🍎</div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">Apple TV / iPhone / iPad</h2>
+                <p class="text-gray-400 text-sm mt-1">iOS 14+, iPadOS 14+ i tvOS 14+ su podržani.</p>
+              </div>
+            </div>
+            <div class="p-8">
+              <div class="flex flex-wrap gap-3 mb-8">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-gray-500/15 border border-gray-500/30 text-gray-300 rounded-full text-sm font-semibold">
+                  ✅ Preporučena: IPTV Smarters Pro
+                </span>
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/15 border border-blue-500/30 text-blue-400 rounded-full text-sm font-semibold">
+                  📱 Alternativa: GSE Smart IPTV (besplatna)
+                </span>
+              </div>
+
+              <ol class="space-y-6">
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">1</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Otvorite App Store</h4>
+                    <p class="text-gray-400">Na iPhone/iPad ili Apple TV otvorite App Store i pretražite <strong class="text-white">„IPTV Smarters Pro"</strong>.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">2</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Instalirajte aplikaciju</h4>
+                    <p class="text-gray-400">Pritisnite „Get" / „Preuzmi" i potvrdite Face ID / Touch ID. Aplikacija je dostupna besplatno.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">3</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Dodajte vaš IPTV račun</h4>
+                    <p class="text-gray-400 mb-3">Pokrenite aplikaciju → <strong class="text-white">Add New User → Login with Xtream Codes API</strong>. Unesite podatke:</p>
+                    <div class="bg-stone-900 border border-stone-700 rounded-xl p-4 space-y-2 text-sm font-mono">
+                      <div class="flex justify-between"><span class="text-gray-500">Name:</span><span class="text-green-400">EXYU IPTV</span></div>
+                      <div class="flex justify-between"><span class="text-gray-500">URL:</span><span class="text-blue-400">http://vaš-server.com</span></div>
+                      <div class="flex justify-between"><span class="text-gray-500">Username:</span><span class="text-blue-400">vaše korisničko ime</span></div>
+                      <div class="flex justify-between"><span class="text-gray-500">Password:</span><span class="text-blue-400">vaša lozinka</span></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-600 to-green-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">✓</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Uživajte!</h4>
+                    <p class="text-gray-400">Pritisnite „Add User" i sve kategorije kanala će se učitati automatski. Apple TV podržava AirPlay za prebacivanje na veliki ekran.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== PC / MAC ===== -->
+        <div id="content-pc" class="tab-panel hidden">
+          <div class="bg-stone-800 border border-stone-700 rounded-3xl overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border-b border-stone-700 px-8 py-6 flex items-center gap-4">
+              <div class="w-14 h-14 bg-purple-600/30 border border-purple-500/40 rounded-2xl flex items-center justify-center text-3xl">💻</div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">PC / Mac / Windows</h2>
+                <p class="text-gray-400 text-sm mt-1">Windows 10/11, macOS, Linux — više opcija za gledanje na računaru.</p>
+              </div>
+            </div>
+            <div class="p-8 space-y-10">
+
+              <!-- VLC Method -->
+              <div>
+                <div class="flex items-center gap-3 mb-5">
+                  <span class="text-2xl">🎬</span>
+                  <h3 class="text-xl font-bold text-white">Metoda 1: VLC Media Player (besplatno)</h3>
+                </div>
+                <ol class="space-y-5">
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-orange-600 text-white rounded-lg flex items-center justify-center font-bold">1</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Preuzmite VLC</h4>
+                      <p class="text-gray-400 text-sm">Idite na <a href="https://videolan.org" target="_blank" class="text-blue-400 underline">videolan.org</a> i preuzmite besplatan VLC Media Player za vaš operativni sistem.</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-orange-600 text-white rounded-lg flex items-center justify-center font-bold">2</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Otvorite mrežni stream</h4>
+                      <p class="text-gray-400 text-sm">Pokrenite VLC → <strong class="text-white">Media → Open Network Stream</strong> (Ctrl+N na Windowsu).</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-orange-600 text-white rounded-lg flex items-center justify-center font-bold">3</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Unesite M3U URL</h4>
+                      <p class="text-gray-400 text-sm">Zalijepite vaš <strong class="text-white">M3U URL</strong> (dobiven od nas) u polje za URL i pritisnite Play.</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="border-t border-stone-700"></div>
+
+              <!-- IPTV Smarters Web -->
+              <div>
+                <div class="flex items-center gap-3 mb-5">
+                  <span class="text-2xl">🌐</span>
+                  <h3 class="text-xl font-bold text-white">Metoda 2: IPTV Smarters Web (browser)</h3>
+                </div>
+                <ol class="space-y-5">
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-purple-600 text-white rounded-lg flex items-center justify-center font-bold">1</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Otvorite iptvsmarters.com</h4>
+                      <p class="text-gray-400 text-sm">U pregledniku idite na <a href="https://iptvsmarters.com" target="_blank" class="text-blue-400 underline">iptvsmarters.com</a> i odaberite web verziju aplikacije.</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-5">
+                    <div class="flex-shrink-0 w-9 h-9 bg-purple-600 text-white rounded-lg flex items-center justify-center font-bold">2</div>
+                    <div class="flex-1 pt-0.5">
+                      <h4 class="font-bold text-white mb-1">Prijavite se s Xtream Codes podacima</h4>
+                      <p class="text-gray-400 text-sm">Unesite Server URL, korisničko ime i lozinku. Nema instalacije — radi direktno u browseru.</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-5">
+                <p class="text-blue-300 text-sm"><strong>💡 Pro tip:</strong> Na Windowsu možete instalirati i <strong>IPTV Smarters Pro</strong> direktno iz Microsoft Store-a za bolji doživljaj od VLC-a.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== MAG BOX ===== -->
+        <div id="content-mag" class="tab-panel hidden">
+          <div class="bg-stone-800 border border-stone-700 rounded-3xl overflow-hidden">
+            <div class="bg-gradient-to-r from-green-600/20 to-teal-600/20 border-b border-stone-700 px-8 py-6 flex items-center gap-4">
+              <div class="w-14 h-14 bg-green-600/30 border border-green-500/40 rounded-2xl flex items-center justify-center text-3xl">📡</div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">MAG Box / STB</h2>
+                <p class="text-gray-400 text-sm mt-1">MAG 250, 254, 256, 322, 324, 420, 522 i ostali Infomir modeli.</p>
+              </div>
+            </div>
+            <div class="p-8">
+              <div class="mb-6 bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-4">
+                <p class="text-yellow-400 text-sm"><strong>⚠️ Važno:</strong> Za MAG Box nam morate poslati <strong>MAC adresu</strong> uređaja. Nalazi se na naljepnici na dnu boksa ili u postavkama sistema.</p>
+              </div>
+
+              <ol class="space-y-6">
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-600 to-teal-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">1</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Pronađite MAC adresu</h4>
+                    <p class="text-gray-400">Idite na <strong class="text-white">Settings → System Information</strong> na vašem MAG boxu ili pogledajte naljepnicu na uređaju. Pošaljite MAC adresu nama.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-600 to-teal-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">2</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Unesite Portal URL</h4>
+                    <p class="text-gray-400">Idite na <strong class="text-white">Settings → Servers → Portals</strong>. U polje <strong class="text-white">Portal 1 URL</strong> unesite portal adresu koju ste dobili od nas.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-600 to-teal-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">3</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Sačuvajte i restartujte</h4>
+                    <p class="text-gray-400">Sačuvajte postavke i restartujte MAG box. Uređaj će se automatski spojiti na naš server.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-600 to-green-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">✓</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Kanali se učitavaju automatski</h4>
+                    <p class="text-gray-400">Nakon ponovnog pokretanja, svi kanali, EPG vodič i VOD sadržaj bit će dostupni.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== ENIGMA2 ===== -->
+        <div id="content-enigma" class="tab-panel hidden">
+          <div class="bg-stone-800 border border-stone-700 rounded-3xl overflow-hidden">
+            <div class="bg-gradient-to-r from-yellow-600/20 to-amber-600/20 border-b border-stone-700 px-8 py-6 flex items-center gap-4">
+              <div class="w-14 h-14 bg-yellow-600/30 border border-yellow-500/40 rounded-2xl flex items-center justify-center text-3xl">📺</div>
+              <div>
+                <h2 class="text-2xl font-bold text-white">Enigma2 / Dreambox / VU+</h2>
+                <p class="text-gray-400 text-sm mt-1">Dreambox, VU+ Uno/Duo, Vu+ Zero, Gigablue, Mut@nt i ostale Enigma2 platforme.</p>
+              </div>
+            </div>
+            <div class="p-8">
+              <div class="flex flex-wrap gap-3 mb-8">
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/15 border border-yellow-500/30 text-yellow-400 rounded-full text-sm font-semibold">
+                  🔧 Plugin: E2m3u2bouquet
+                </span>
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/15 border border-orange-500/30 text-orange-400 rounded-full text-sm font-semibold">
+                  📦 Alternativa: OpenWebif M3U uvoz
+                </span>
+              </div>
+
+              <ol class="space-y-6">
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-yellow-600 to-amber-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">1</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Instalirajte E2m3u2bouquet plugin</h4>
+                    <p class="text-gray-400">Preuzmite <strong class="text-white">E2m3u2bouquet</strong> plugin putem PLi Software Managera ili ručno putem <a href="https://github.com/atvcaptain/e2m3u2bouquet" target="_blank" class="text-blue-400 underline">GitHub stranice</a>.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-yellow-600 to-amber-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">2</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Konfigurirajte plugin s vašim M3U URL-om</h4>
+                    <p class="text-gray-400">Otvorite plugin → Settings → unesite vaš <strong class="text-white">M3U URL</strong> i <strong class="text-white">EPG URL</strong> koje ste dobili od nas.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-yellow-600 to-amber-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">3</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Pokrenite uvoz bouqueta</h4>
+                    <p class="text-gray-400">Pokrenite <strong class="text-white">„Run E2m3u2bouquet"</strong>. Plugin će automatski kreirati bouquete sa svim IPTV kanalima grupisanim po kategorijama.</p>
+                  </div>
+                </li>
+                <li class="flex gap-5">
+                  <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-yellow-600 to-amber-700 text-white rounded-xl flex items-center justify-center font-bold text-lg">4</div>
+                  <div class="flex-1 pt-1">
+                    <h4 class="font-bold text-white text-lg mb-1">Restartujte GUI</h4>
+                    <p class="text-gray-400">Restartujte Enigma2 GUI. Novi bouqueti s IPTV kanalima pojavit će se u listi kanala.</p>
+                  </div>
+                </li>
+              </ol>
+
+              <div class="mt-8 bg-blue-500/10 border border-blue-500/30 rounded-2xl p-5">
+                <p class="text-blue-300 text-sm"><strong>💡 Napomena:</strong> Za Enigma2 preporučujemo kontaktirati nas direktno putem WhatsAppa. Pružamo personaliziranu pomoć za konfiguraciju vašeg specifičnog modela.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end tab-content -->
+
+      <!-- Tips / FAQ mini -->
+      <div class="max-w-4xl mx-auto mt-16">
+        <h2 class="text-2xl font-bold text-white mb-8 text-center">Česta pitanja o instalaciji</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+
+          <div class="bg-stone-800 border border-stone-700 rounded-2xl p-6">
+            <div class="text-blue-400 text-xl mb-3">🔑</div>
+            <h4 class="font-bold text-white mb-2">Gdje su moji podaci za prijavu?</h4>
+            <p class="text-gray-400 text-sm">Server URL, korisničko ime i lozinku dobijate putem WhatsAppa odmah nakon aktivacije pretplate.</p>
+          </div>
+
+          <div class="bg-stone-800 border border-stone-700 rounded-2xl p-6">
+            <div class="text-green-400 text-xl mb-3">⏱️</div>
+            <h4 class="font-bold text-white mb-2">Koliko traje aktivacija?</h4>
+            <p class="text-gray-400 text-sm">Aktivacija traje od nekoliko minuta do maksimalno 1 sat. Radimo 24/7 i nastojimo odgovoriti što brže.</p>
+          </div>
+
+          <div class="bg-stone-800 border border-stone-700 rounded-2xl p-6">
+            <div class="text-orange-400 text-xl mb-3">📺</div>
+            <h4 class="font-bold text-white mb-2">Na koliko uređaja mogu gledati?</h4>
+            <p class="text-gray-400 text-sm">Standardni i Premium paketi dolaze s 1 konekcijom (1 uređaj istovremeno). Kontaktirajte nas za multi-screen opciju.</p>
+          </div>
+
+          <div class="bg-stone-800 border border-stone-700 rounded-2xl p-6">
+            <div class="text-purple-400 text-xl mb-3">🆘</div>
+            <h4 class="font-bold text-white mb-2">Kanali se ne učitavaju?</h4>
+            <p class="text-gray-400 text-sm">Provjerite internet vezu, restartujte aplikaciju i uređaj. Ako problem ostaje, kontaktirajte nas — riješit ćemo u roku 15 minuta.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="max-w-4xl mx-auto mt-16">
+        <div class="bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-3xl p-10 text-center">
+          <div class="text-4xl mb-4">🎬</div>
+          <h3 class="text-2xl font-bold text-white mb-3">Trebate pomoć sa instalacijom?</h3>
+          <p class="text-gray-300 mb-8 max-w-lg mx-auto">
+            Naš tim je dostupan 24/7. Instaliramo i konfigurišemo sve zajedno s vama putem WhatsAppa — bez čekanja.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/4915251741280"
+              target="_blank" rel="noopener"
+              class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl shadow-lg shadow-green-600/25 hover:shadow-xl hover:shadow-green-600/30 hover:-translate-y-0.5 transition-all duration-200"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Kontaktiraj podršku na WhatsApp
+            </a>
+            <a
+              href="/narudzba"
+              class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-stone-800 border border-stone-600 text-gray-300 font-semibold rounded-xl hover:bg-stone-700 hover:text-white transition-all duration-200"
+            >
+              🎁 Testiraj 24h besplatno
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </BaseLayout>
+
+<script>
+  // Tab switching logic
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  const colorMap: Record<string, { border: string; bg: string; text: string }> = {
+    android: { border: 'border-blue-500',  bg: 'bg-blue-500/10',  text: 'text-blue-400' },
+    firetv:  { border: 'border-orange-500', bg: 'bg-orange-500/10', text: 'text-orange-400' },
+    smarttv: { border: 'border-blue-500',  bg: 'bg-blue-500/10',  text: 'text-blue-400' },
+    apple:   { border: 'border-gray-300',  bg: 'bg-gray-500/10',  text: 'text-gray-200' },
+    pc:      { border: 'border-purple-500', bg: 'bg-purple-500/10', text: 'text-purple-400' },
+    mag:     { border: 'border-green-500', bg: 'bg-green-500/10', text: 'text-green-400' },
+    enigma:  { border: 'border-yellow-500', bg: 'bg-yellow-500/10', text: 'text-yellow-400' },
+  };
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = (btn as HTMLElement).dataset.tab as string;
+
+      // Reset all buttons
+      tabBtns.forEach(b => {
+        const bt = b as HTMLElement;
+        bt.classList.remove('border-blue-500','border-orange-500','border-gray-300','border-purple-500','border-green-500','border-yellow-500');
+        bt.classList.remove('bg-blue-500/10','bg-orange-500/10','bg-gray-500/10','bg-purple-500/10','bg-green-500/10','bg-yellow-500/10');
+        bt.classList.remove('text-blue-400','text-orange-400','text-gray-200','text-purple-400','text-green-400','text-yellow-400');
+        bt.classList.add('border-stone-700','bg-stone-800','text-gray-400');
+      });
+
+      // Activate clicked button
+      const colors = colorMap[tab];
+      if (colors) {
+        (btn as HTMLElement).classList.remove('border-stone-700','bg-stone-800','text-gray-400');
+        (btn as HTMLElement).classList.add(colors.border, colors.bg, colors.text);
+      }
+
+      // Show/hide panels
+      tabPanels.forEach(panel => {
+        const p = panel as HTMLElement;
+        if (p.id === `content-${tab}`) {
+          p.classList.remove('hidden');
+        } else {
+          p.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
