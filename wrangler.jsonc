@@ -1,14 +1,4 @@
 {
   "name": "exyuiptv-website",
-  "compatibility_date": "2026-02-26",
-  "pages": {
-    "build": {
-      "command": "npm run build",
-      "cwd": ".",
-      "output_dir": "dist"
-    },
-    "compatibility_flags": {
-      "nodejs_compat": true
-    }
-  }
+  "compatibility_date": "2026-02-26"
 }
