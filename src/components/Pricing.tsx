@@ -136,7 +136,7 @@ export default function Pricing() {
                     {pricing.price}
                   </div>
                   <a
-                    href="/kontakt"
+                    href="/narudzba"
                     className={`block w-full py-3 rounded-xl font-semibold transition-all duration-200 ${
                       currentPlan.popular
                         ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-gray-900 hover:shadow-lg hover:shadow-orange-500/30'
@@ -154,7 +154,7 @@ export default function Pricing() {
           <div className="text-center mt-8">
             <p className="text-gray-300">
               Niste sigurni koji paket odabrati?{' '}
-              <a href="/kontakt" className="text-blue-400 font-semibold hover:underline">
+              <a href="/narudzba" className="text-blue-400 font-semibold hover:underline">
                 🎁 Testiraj 24h Besplatno
               </a>
             </p>
