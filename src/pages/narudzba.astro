@@ -28,7 +28,7 @@ const devices = [
 
 <BaseLayout
   title="Naruči EXYU IPTV | Besplatno Testiranje 24h"
-  description="Naručite vašu EXYU IPTV pretplatu ili zatražite besplatni test 24h. Popunite formular i dobijte pristupne podatke za par minuta."
+  description="Naručite vašu EXYU IPTV pretplatu ili zatražite besplatni test 24h. Popunite formular i dobit ćete pristupne podatke za par minuta."
 >
 
   <!-- Hero -->
@@ -45,7 +45,7 @@ const devices = [
         Naruči <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Sada</span>
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-        Ispunite formular i dobit ćete pristupne podatke u roku od par minuta
+        Ispunite formular — bit ćete preusmjereni na WhatsApp s vašim podacima
       </p>
     </div>
   </section>
@@ -56,9 +56,9 @@ const devices = [
 
       <!-- Form Card -->
       <form
+        id="narudzba-form"
         class="bg-stone-800 border border-stone-700 rounded-3xl p-8 md:p-10 shadow-2xl"
-        action="#"
-        method="POST"
+        novalidate
       >
         <div class="space-y-6">
 
@@ -82,18 +82,6 @@ const devices = [
             <input
               type="email" id="email" name="email" required
               placeholder="vas.email@example.com"
-              class="w-full bg-stone-900 border border-stone-600 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-            />
-          </div>
-
-          <!-- Phone -->
-          <div>
-            <label for="phone" class="block text-sm font-semibold text-gray-300 uppercase tracking-wide mb-2">
-              Telefon (WhatsApp) *
-            </label>
-            <input
-              type="tel" id="phone" name="phone" required
-              placeholder="+49 152 51741280"
               class="w-full bg-stone-900 border border-stone-600 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
             />
           </div>
@@ -125,7 +113,7 @@ const devices = [
             >
               <option value="">Odaberite paket</option>
               {packages.map((pkg) => (
-                <option value={pkg.value}>{pkg.name} — {pkg.price}</option>
+                <option value={`${pkg.name} — ${pkg.price}`}>{pkg.name} — {pkg.price}</option>
               ))}
             </select>
           </div>
@@ -145,44 +133,70 @@ const devices = [
           <!-- Submit -->
           <button
             type="submit"
-            class="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5 transition-all duration-200 text-lg"
+            class="w-full flex items-center justify-center gap-3 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl shadow-lg shadow-green-600/25 hover:shadow-xl hover:shadow-green-600/30 hover:-translate-y-0.5 transition-all duration-200 text-lg"
           >
-            Naruči Sada 🚀
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Pošalji na WhatsApp 🚀
           </button>
 
           <p class="text-center text-sm text-gray-500">
-            🔒 Podaci su sigurni. Ne dijelimo ih sa trećim stranama.
+            🔒 Podaci se šalju direktno vama na WhatsApp. Ne pohranjujemo ništa.
           </p>
         </div>
       </form>
 
-      <!-- Contact CTA -->
-      <div class="mt-12 text-center">
-        <p class="text-gray-400 mb-6">Ili nas kontaktirajte direktno:</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a
-            href="https://wa.me/4915251741280"
-            target="_blank" rel="noopener"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500/20 border border-green-500/40 text-green-400 font-semibold rounded-xl hover:bg-green-500/30 transition-colors"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            WhatsApp
-          </a>
-          <a
-            href="mailto:info@exyuiptv.org"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600/20 border border-blue-500/40 text-blue-400 font-semibold rounded-xl hover:bg-blue-600/30 transition-colors"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-            info@exyuiptv.org
-          </a>
-        </div>
+      <!-- Direct WhatsApp CTA -->
+      <div class="mt-10 text-center">
+        <p class="text-gray-400 mb-4">Ili nas kontaktirajte direktno bez forme:</p>
+        <a
+          href="https://wa.me/4915251741280"
+          target="_blank" rel="noopener"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500/20 border border-green-500/40 text-green-400 font-semibold rounded-xl hover:bg-green-500/30 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Otvori WhatsApp direktno
+        </a>
       </div>
 
     </div>
   </section>
 
 </BaseLayout>
+
+<script>
+  const form = document.getElementById('narudzba-form') as HTMLFormElement;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name    = (document.getElementById('name')    as HTMLInputElement).value.trim();
+    const email   = (document.getElementById('email')   as HTMLInputElement).value.trim();
+    const device  = (document.getElementById('device')  as HTMLSelectElement).value;
+    const pkg     = (document.getElementById('package') as HTMLSelectElement).value;
+    const message = (document.getElementById('message') as HTMLTextAreaElement).value.trim();
+
+    // Validate required fields
+    if (!name || !email || !device || !pkg) {
+      alert('Molimo popunite sva obavezna polja (Ime, Email, Uređaj, Paket).');
+      return;
+    }
+
+    // Build WhatsApp message
+    let text = `🎬 *EXYU IPTV Narudžba*\n\n`;
+    text += `👤 *Ime:* ${name}\n`;
+    text += `📧 *Email:* ${email}\n`;
+    text += `📺 *Uređaj:* ${device}\n`;
+    text += `📦 *Paket:* ${pkg}\n`;
+    if (message) {
+      text += `💬 *Poruka:* ${message}\n`;
+    }
+    text += `\n✅ Molim vas da me kontaktirate sa daljnjim uputama.`;
+
+    const waUrl = `https://wa.me/4915251741280?text=${encodeURIComponent(text)}`;
+    window.open(waUrl, '_blank');
+  });
+</script>
