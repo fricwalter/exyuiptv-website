@@ -4,7 +4,8 @@
   "pages": {
     "build": {
       "command": "npm run build",
-      "cwd": "."
+      "cwd": ".",
+      "output_dir": "dist"
     },
     "compatibility_flags": {
       "nodejs_compat": true
