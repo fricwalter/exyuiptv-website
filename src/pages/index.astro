@@ -1,252 +1,62 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const features = [
-  {
-    icon: "📺",
-    title: "Preko 25.000 kanala",
-    description: "Gledajte preko 25.000 TV kanala iz cijelog svijeta, uključujući sve balkanske programe."
-  },
-  {
-    icon: "🎬",
-    title: "HD & 4K kvalitet",
-    description: "Uživajte u kristalno čistoj slici u HD i 4K rezoluciji bez prekida."
-  },
-  {
-    icon: "🌍",
-    title: "Balkanski kanali",
-    description: "Svi popularni kanali iz Hrvatske, Srbije, Bosne, Crne Gore i Makedonije."
-  },
-  {
-    icon: "⚡",
-    title: "Brza instalacija",
-    description: "Jednostavna instalacija za sve uređaje - Smart TV, Android box, mobitel i računar."
-  },
-  {
-    icon: "🔄",
-    title: "EPG voditelj",
-    description: "Elektronski programski vodič za sve vaše omiljene kanale."
-  },
-  {
-    icon: "💬",
-    title: "24/7 podrška",
-    description: "Naš tim je dostupan non-stop za sva pitanja i tehničku pomoć."
-  }
-];
-
-const pricingPlans = [
-  {
-    name: "Osnovni",
-    price: "9.99",
-    period: "mjesecno",
-    features: [
-      "Preko 10.000 kanala",
-      "SD kvalitet",
-      "2 uređaja istovremeno",
-      "Podrška 24/7"
-    ],
-    popular: false
-  },
-  {
-    name: "Premium",
-    price: "14.99",
-    period: "mjesecno",
-    features: [
-      "Preko 25.000 kanala",
-      "HD & 4K kvalitet",
-      "3 uređaja istovremeno",
-      "EPG voditelj",
-      "Podrška 24/7"
-    ],
-    popular: true
-  },
-  {
-    name: "Porodični",
-    price: "19.99",
-    period: "mjesecno",
-    features: [
-      "Svi kanali",
-      "4K HDR kvalitet",
-      "5 uređaja istovremeno",
-      "EPG voditelj",
-      "Snimanje (PVR)",
-      "Prioritetna podrška"
-    ],
-    popular: false
-  }
-];
-
-const countries = [
-  { name: "Njemačka", flag: "🇩🇪", href: "/exyu-iptv-deutschland" },
-  { name: "Austrija", flag: "🇦🇹", href: "/exyuiptv-austrija" },
-  { name: "Švicarska", flag: "🇨🇭", href: "/exyuiptv-svicarska" },
-  { name: "Hrvatska", flag: "🇭🇷", href: "/exyuiptv-hrvatska" },
-  { name: "Bosna", flag: "🇧🇦", href: "/exyuiptv-bosna" },
-  { name: "Srbija", flag: "🇷🇸", href: "/exyuiptv-srbija" },
-];
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import CategoryTabs from '../components/CategoryTabs.tsx';
+import Devices from '../components/Devices.astro';
+import Pricing from '../components/Pricing.tsx';
+import FAQ from '../components/FAQ.tsx';
 ---
 
-<BaseLayout title="EXYU IPTV - Premium Balkanska TV u HD & 4K">
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-    <div class="container-custom relative py-24 md:py-32">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">
-          Premium Balkanska TV
-          <span class="block text-blue-400">u HD & 4K kvalitetu</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-slate-300 mb-8 animate-fadeIn stagger-1">
-          Gledajte preko 25.000 kanala iz regije i svijeta. Svi balkanski kanali na jednom mjestu.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeIn stagger-2">
-          <a href="/osnovni-paket" class="btn bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
-            Pogledaj ponudu
-            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-          <a href="/tv-lista-kanala" class="btn bg-white/10 hover:bg-white/20 text-white text-lg px-8 py-4 border border-white/30">
-            Lista kanala
-          </a>
-        </div>
-      </div>
-    </div>
+<BaseLayout
+  title="EXYU IPTV | Premium Balkanska TV za Dijasporu - 25.000+ Kanala u 4K"
+  description="#1 IPTV za dijasporu. Gledaj EXYU kanale bez ugovora i bez zamrzavanja, uz 25.000+ kanala i videoteku u 4K rezoluciji. Savršeno za Njemačku, Austriju i Švicarsku."
+>
+  <h1 class="sr-only">EXYU IPTV kanali za dijasporu</h1>
+  <Hero />
+  <Features />
+  <CategoryTabs client:visible />
+  <Devices />
+  <Pricing client:visible />
+  <FAQ client:visible />
 
-    <!-- Wave Divider -->
-    <div class="absolute bottom-0 left-0 right-0">
-      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="section bg-white">
-    <div class="container-custom">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-          Zašto odabrati EXYU IPTV?
-        </h2>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-          Nudimo vam najbolju IPTV uslugu s garancijom kvalitete i pouzdanosti.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map((feature) => (
-          <div class="card hover:border-blue-500 border-2 border-transparent group">
-            <div class="text-4xl mb-4">{feature.icon}</div>
-            <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors">
-              {feature.title}
-            </h3>
-            <p class="text-slate-600">
-              {feature.description}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Countries Section -->
-  <section class="section bg-slate-50">
-    <div class="container-custom">
+  <!-- Blog / Country Links CTA Section -->
+  <section class="py-20 bg-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-          IPTV dostupan širom svijeta
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+          IPTV <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Dostupan Širom Dijaspore</span>
         </h2>
-        <p class="text-xl text-slate-600">
-          Gledajte balkansku televiziju bilo gdje u dijaspori
-        </p>
+        <p class="text-lg text-gray-300">Gledajte balkansku televiziju bilo gdje u svijetu</p>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        {countries.map((country) => (
-          <a href={country.href} class="card hover:bg-blue-50 hover:border-blue-500 border-2 border-transparent text-center py-6 transition-all group">
+        {[
+          { name: "Njemačka", flag: "🇩🇪", href: "/exyu-iptv-deutschland" },
+          { name: "Austrija", flag: "🇦🇹", href: "/exyuiptv-austrija" },
+          { name: "Švicarska", flag: "🇨🇭", href: "/exyuiptv-svicarska" },
+          { name: "Hrvatska", flag: "🇭🇷", href: "/exyuiptv-hrvatska" },
+          { name: "Bosna", flag: "🇧🇦", href: "/exyuiptv-bosna" },
+          { name: "Srbija", flag: "🇷🇸", href: "/exyuiptv-srbija" },
+        ].map((country) => (
+          <a
+            href={country.href}
+            class="group bg-stone-900 hover:bg-stone-700 border border-stone-700 hover:border-blue-500 rounded-2xl text-center py-6 px-4 transition-all duration-300 hover:-translate-y-1"
+          >
             <div class="text-4xl mb-2">{country.flag}</div>
-            <div class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+            <div class="font-semibold text-gray-200 group-hover:text-blue-400 transition-colors text-sm">
               {country.name}
             </div>
           </a>
         ))}
       </div>
 
-      <div class="text-center mt-8">
-        <a href="/exyuiptv-bosna" class="btn btn-outline">
-          Pogledaj sve države
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Section -->
-  <section class="section bg-white">
-    <div class="container-custom">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-          Jednostavne cijene
-        </h2>
-        <p class="text-xl text-slate-600">
-          Odaberite paket koji vam najbolje odgovara
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {pricingPlans.map((plan) => (
-          <div class:list={[
-            "card relative",
-            plan.popular ? "border-2 border-blue-500 ring-4 ring-blue-500/20" : ""
-          ]}>
-            {plan.popular && (
-              <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                Najpopularniji
-              </div>
-            )}
-            <div class="text-center mb-6">
-              <h3 class="text-xl font-bold text-slate-800 mb-2">{plan.name}</h3>
-              <div class="flex items-baseline justify-center gap-1">
-                <span class="text-4xl font-bold text-slate-800">{plan.price}€</span>
-                <span class="text-slate-500">/ {plan.period}</span>
-              </div>
-            </div>
-            <ul class="space-y-3 mb-8">
-              {plan.features.map((feature) => (
-                <li class="flex items-center gap-3 text-slate-600">
-                  <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <a href="/kontakt" class:list={[
-              "btn w-full",
-              plan.popular ? "btn-primary" : "btn-secondary"
-            ]}>
-              Naruči sada
-            </a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="section bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-    <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        Spremni ste da počnete?
-      </h2>
-      <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-        Naručite svoj IPTV paket danas i uživajte u hiljadama kanala već za nekoliko minuta.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/kontakt" class="btn bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-4">
-          Kontaktirajte nas
-        </a>
-        <a href="/instalacija" class="btn bg-blue-700 hover:bg-blue-800 text-white text-lg px-8 py-4 border border-blue-500">
-          Vodič za instalaciju
+      <div class="text-center mt-10">
+        <a
+          href="/exyuiptv-bosna"
+          class="inline-flex items-center gap-2 px-6 py-3 border-2 border-stone-600 hover:border-blue-500 text-gray-300 hover:text-white font-semibold rounded-xl transition-all duration-200"
+        >
+          Pogledaj sve države →
         </a>
       </div>
     </div>

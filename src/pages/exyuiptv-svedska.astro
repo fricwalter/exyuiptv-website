@@ -1,20 +1,198 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const country = { name: "Švedska", flag: "🇸🇪", features: ["Preko 25.000 kanala", "HD & 4K", "Balkanski kanali", "Švedski kanali", "24/7 podrška"] };
+import Pricing from '../components/Pricing.tsx';
+import FAQ from '../components/FAQ.tsx';
+
+const country = {
+  name: "Švedska",
+  flag: "🇸🇪",
+  title: "IPTV Švedska",
+  description: "EXYU IPTV za EXYU dijasporu u Švedskoj. Stabilni serveri za Skandinaviju.",
+  channels: "BHT 1, FTV, N1, Hayat, Pink, SVT",
+};
 ---
-<BaseLayout title={`IPTV ${country.name} - EXYU IPTV`} description={`Gledajte balkansku TV u ${country.name} s EXYU IPTV - preko 25.000 kanala.`}>
-  <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white py-20">
-    <div class="container-custom">
-      <div class="flex items-center gap-4 mb-6"><span class="text-6xl">{country.flag}</span><h1 class="text-4xl md:text-5xl font-bold">IPTV {country.name}</h1></div>
-      <p class="text-xl text-slate-300">Gledajte sve balkanske kanale. Premium IPTV usluga.</p>
+
+<BaseLayout
+  title={`IPTV Švedska | EXYU IPTV - 25.000+ Kanala za Dijasporu`}
+  description={country.description}
+  canonicalUrl={`https://exyuiptv.org/exyuiptv-svedska`}
+>
+  <!-- Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden" style="background: linear-gradient(135deg, #1e3a5f 0%, #1c1917 60%);">
+    <div class="absolute inset-0 opacity-10"
+      style="background-image: radial-gradient(circle at 20% 50%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #7c3aed 0%, transparent 50%);">
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="text-8xl mb-6">{country.flag}</div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+        IPTV <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">{country.name}</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+        {country.description}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-gray-900 font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+        >
+          🎁 Testiraj 24h Besplatno
+        </a>
+        <a
+          href="#pricing"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all"
+        >
+          Pogledaj Pakete
+        </a>
+      </div>
     </div>
   </section>
-  <section class="section bg-white">
-    <div class="container-custom">
-      <div class="grid md:grid-cols-2 gap-12">
-        <div><h2 class="text-2xl font-bold mb-6">Zašto EXYU IPTV?</h2><ul class="space-y-4">{country.features.map(f => <li class="flex gap-3 text-slate-600"><svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>{f}</li>)}</ul></div>
-        <div class="card"><h3 class="text-xl font-bold mb-4">Cijene</h3><p class="text-4xl font-bold">od 9.99€/mj</p><a href="/kontakt" class="btn btn-primary mt-6 block text-center">Naruči sada</a></div>
+
+  <!-- Features -->
+  <section class="py-20 bg-stone-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+          Zašto Odabrati <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">EXYU IPTV</span>?
+        </h2>
       </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: "📺", title: "25.000+ Kanala", desc: "Svi EXYU kanali plus internacionalni programi u HD i 4K rezoluciji." },
+          { icon: "⚡", title: "Bez Zamrzavanja", desc: "Stabilni EU serveri u Njemačkoj i Holandiji. 99.9% uptime garantovan." },
+          { icon: "📜", title: "Bez Ugovora", desc: "Plaćajte na mjesečnoj bazi. Otkaži kada god hoćeš bez komplikacija." },
+          { icon: "📱", title: "Svi Uređaji", desc: "Smart TV, Android Box, Fire Stick, telefon, tablet ili PC." },
+          { icon: "🎬", title: "VOD Videoteka", desc: "10.000+ filmova i serija sa prevodom na demand." },
+          { icon: "💬", title: "WhatsApp Podrška", desc: "Naš tim odgovara brzo putem WhatsApp-a za svako pitanje." },
+        ].map(f => (
+          <div class="bg-stone-800 rounded-2xl p-6 border border-stone-700 hover:border-blue-500 hover:-translate-y-1 transition-all duration-300">
+            <div class="text-3xl mb-3">{f.icon}</div>
+            <h3 class="text-lg font-bold text-white mb-2">{f.title}</h3>
+            <p class="text-gray-400 text-sm">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Channels -->
+  <section class="py-16 bg-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-white">
+          Popularni Kanali za <span class="text-blue-400">{country.name}</span>
+        </h2>
+        <p class="text-gray-400 mt-2">{country.channels} i još mnogo više...</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        {country.channels.split(', ').map(ch => (
+          <span class="px-4 py-2 bg-stone-900 border border-stone-700 rounded-full text-gray-200 text-sm font-medium">
+            📺 {ch}
+          </span>
+        ))}
+        <span class="px-4 py-2 bg-blue-900/40 border border-blue-700 rounded-full text-blue-300 text-sm font-medium">
+          + 25.000 kanala
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <Pricing client:visible />
+
+  <!-- FAQ -->
+  <FAQ client:visible />
+
+
+  <!-- Other Countries Cross-Links -->
+  <section class="py-16 bg-stone-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">
+          IPTV u Ostalim <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Državama</span>
+        </h2>
+        <p class="text-gray-400">Dostupni smo u svim europskim i prekooceanskim odredištima dijaspore</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 mb-8">
+          <a href="/exyu-iptv-deutschland" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇩🇪</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Njemačka</span>
+          </a>
+          <a href="/exyuiptv-austrija" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇦🇹</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Austrija</span>
+          </a>
+          <a href="/exyuiptv-svicarska" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇨🇭</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Švicarska</span>
+          </a>
+          <a href="/exyuiptv-bosna" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇧🇦</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Bosna</span>
+          </a>
+          <a href="/exyuiptv-hrvatska" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇭🇷</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Hrvatska</span>
+          </a>
+          <a href="/exyuiptv-srbija" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇷🇸</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Srbija</span>
+          </a>
+          <a href="/exyuiptv-usa" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇺🇸</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">USA</span>
+          </a>
+          <a href="/exyuiptv-velika-britanija" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇬🇧</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Velika Britanija</span>
+          </a>
+          <a href="/exyuiptv-australija" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇦🇺</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Australija</span>
+          </a>
+          <a href="/exyuiptv-belgija" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇧🇪</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Belgija</span>
+          </a>
+          <a href="/exyuiptv-makedonija" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇲🇰</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Makedonija</span>
+          </a>
+          <a href="/exyuiptv-slovenija" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇸🇮</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Slovenija</span>
+          </a>
+          <a href="/exyuiptv-crna-gora" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇲🇪</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Crna Gora</span>
+          </a>
+          <a href="/exyuiptv-spanija" class="flex flex-col items-center gap-2 p-4 bg-stone-800 border border-stone-700 rounded-2xl hover:border-blue-500 hover:bg-stone-700 hover:-translate-y-1 transition-all duration-200 text-center group">
+            <span class="text-3xl">🇪🇸</span>
+            <span class="text-sm font-medium text-gray-300 group-hover:text-blue-400 transition-colors">Španija</span>
+          </a>
+      </div>
+      <div class="text-center">
+        <a href="/" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold transition-colors">
+          ← Nazad na Početnu Stranicu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-20 bg-gradient-to-r from-blue-900 to-purple-900">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+        Spremni za gledanje?
+      </h2>
+      <p class="text-lg text-blue-200 mb-8">
+        Aktivirajte vaš EXYU IPTV nalog danas i počnite gledati u {country.name} za nekoliko minuta.
+      </p>
+      <a
+        href="/kontakt"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-900 font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+      >
+        Kontaktirajte nas →
+      </a>
     </div>
   </section>
 </BaseLayout>

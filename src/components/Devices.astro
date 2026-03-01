@@ -1,0 +1,65 @@
+---
+const devices = [
+  { name: "Smart TV (Samsung, LG, Android)", image: "/images/devices/smart-tv.webp" },
+  { name: "Amazon Fire TV Stick",            image: "/images/devices/fire-tv-stick.webp" },
+  { name: "Android Box / TV Box",            image: "/images/devices/android-box.webp" },
+  { name: "Apple TV & iOS Uređaji",          image: "/images/devices/apple-tv.webp" },
+  { name: "Android Telefoni & Tableti",      image: "/images/devices/android-phone.webp" },
+  { name: "PC / Laptop (Windows & Mac)",     image: "/images/devices/pc-laptop.webp" },
+  { name: "MAG & Enigma2 Resiveri",          image: "/images/devices/mag-enigma.webp" },
+  { name: "PlayStation & Xbox",              image: "/images/devices/playstation-xbox.webp" },
+];
+---
+
+<section class="py-20 bg-stone-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Gledajte na <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Bilo Kojem Uređaju</span>
+      </h2>
+      <p class="text-lg text-gray-300">
+        Jedna pretplata otključava svijet zabave na svim vašim ekranima. Počnite gledati na TV-u u dnevnoj sobi, nastavite na tabletu u spavaćoj ili na telefonu dok putujete.
+      </p>
+    </div>
+
+    <!-- Devices Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {devices.map((device) => (
+        <div class="group relative rounded-2xl overflow-hidden cursor-default border border-stone-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/30">
+          <!-- Photo -->
+          <img
+            src={device.image}
+            alt={device.name}
+            class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+          <!-- Dark gradient overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <!-- Label at bottom -->
+          <div class="absolute bottom-0 left-0 right-0 px-4 py-3">
+            <p class="text-white font-bold text-sm uppercase tracking-wide leading-tight drop-shadow">
+              {device.name}
+            </p>
+          </div>
+          <!-- Blue hover accent line -->
+          <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Installation CTA -->
+    <div class="mt-16 text-center">
+      <div class="inline-flex items-center gap-3 px-6 py-3 bg-stone-800 rounded-2xl">
+        <span class="text-2xl">💡</span>
+        <span class="text-white font-medium">Jednostavna Instalacija</span>
+      </div>
+      <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
+        Nakon narudžbe dobijate detaljna uputstva za instalaciju aplikacije na vaš uređaj. Proces traje manje od 5 minuta!
+      </p>
+      <a href="/instalacija" class="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all">
+        Vodič za Instalaciju →
+      </a>
+    </div>
+  </div>
+</section>
